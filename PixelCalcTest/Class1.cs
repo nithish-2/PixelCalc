@@ -11,7 +11,7 @@ namespace PixelCalc
     public class Class1
     {
         [Test]
-        public void DiagonalCalculation_Input20and10and31_OutputValidDiagonal()
+        public void DiagonalCalcWithPositiveInputs_Input20and10and31_OutputValidDiagonal()
         {
             // Arrange
             double screenWidth = 20;
@@ -23,6 +23,21 @@ namespace PixelCalc
 
             // Assert
             Assert.AreEqual(22, actualDiagonalInPixels);
+        }
+
+        [Test]
+        public void PPICalcWithPositiveInputs_Input45and43and36_OutputValidPPI()
+        {
+            // Arrange
+            double screenWidth = 45;
+            double screenHeight = 43;
+            double diagonalInInches = 36;
+
+            // Act
+            double actualDiagonalInPixels = PixelCalc.PPICalculation(screenWidth, screenHeight, diagonalInInches);
+
+            // Assert
+            Assert.AreEqual(1.73, actualDiagonalInPixels);
         }
     }
 }
