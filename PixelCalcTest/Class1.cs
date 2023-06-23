@@ -18,11 +18,13 @@ namespace PixelCalc
             double screenHeight = 10;
             double diagonalInInches = 31;
 
+            double expected = 22;
+
             // Act
-            double actualDiagonalInPixels = PixelCalc.DiagonalInPixelCalculation(screenWidth, screenHeight, diagonalInInches);
+            double actual = PixelCalc.DiagonalInPixelCalculation(screenWidth, screenHeight, diagonalInInches);
 
             // Assert
-            Assert.AreEqual(22, actualDiagonalInPixels);
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -33,11 +35,31 @@ namespace PixelCalc
             double screenHeight = 43;
             double diagonalInInches = 36;
 
+            double expected = 1.73;
+
             // Act
-            double actualDiagonalInPixels = PixelCalc.PPICalculation(screenWidth, screenHeight, diagonalInInches);
+            double actual = PixelCalc.PPICalculation(screenWidth, screenHeight, diagonalInInches);
 
             // Assert
-            Assert.AreEqual(1.73, actualDiagonalInPixels);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void DotPitchCalcWithPositiveInputs_Input58and21and44_OutputValidDotPitch()
+        {
+            // Arrange
+            double screenWidth = 58;
+            double screenHeight = 21;
+            double diagonalInInches = 44;
+
+
+            double expected = 18.118;
+
+            // Act
+            double actual = PixelCalc.DotPitchCalculation(screenWidth, screenHeight, diagonalInInches);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
