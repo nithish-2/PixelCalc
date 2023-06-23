@@ -80,6 +80,7 @@ namespace PixelCalc
                     Console.WriteLine(PixelCalc.DiagonalInPixelCalculation(screenWidth, screenHeight, diagonalInInches));
                     Console.WriteLine(PixelCalc.PPICalculation(screenWidth, screenHeight, diagonalInInches));
                     Console.WriteLine(PixelCalc.DotPitchCalculation(screenWidth, screenHeight, diagonalInInches));
+
                 }
 
                 //exits program if menu option 2 is selected
@@ -92,6 +93,8 @@ namespace PixelCalc
                     System.Environment.Exit(1);
                 }
             }
+
         }
+
     }
 }

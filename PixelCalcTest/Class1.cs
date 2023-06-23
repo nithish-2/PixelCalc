@@ -18,10 +18,10 @@ namespace PixelCalc
             double screenHeight = 10;
             double diagonalInInches = 31;
 
-            double expected = 22;
+            string expected = "22";
 
             // Act
-            double actual = PixelCalc.DiagonalInPixelCalculation(screenWidth, screenHeight, diagonalInInches);
+            string actual = PixelCalc.DiagonalInPixelCalculation(screenWidth, screenHeight, diagonalInInches);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -35,10 +35,10 @@ namespace PixelCalc
             double screenHeight = 43;
             double diagonalInInches = 36;
 
-            double expected = 1.73;
+            string expected = "1.73";
 
             // Act
-            double actual = PixelCalc.PPICalculation(screenWidth, screenHeight, diagonalInInches);
+            string actual = PixelCalc.PPICalculation(screenWidth, screenHeight, diagonalInInches);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -53,10 +53,28 @@ namespace PixelCalc
             double diagonalInInches = 44;
 
 
-            double expected = 18.118;
+            string expected = "18.118";
 
             // Act
-            double actual = PixelCalc.DotPitchCalculation(screenWidth, screenHeight, diagonalInInches);
+            string actual = PixelCalc.DotPitchCalculation(screenWidth, screenHeight, diagonalInInches);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void PPICalcWithNegativeInputs_Input25and20and90_OutputValidPPI()
+        {
+            // Arrange
+            double screenWidth = -25;
+            double screenHeight = 20;
+            double diagonalInInches = 90;
+
+
+            string expected = "Please provide inputs greater than zero";
+
+            // Act
+            string actual = PixelCalc.PPICalculation(screenWidth, screenHeight, diagonalInInches);
 
             // Assert
             Assert.AreEqual(expected, actual);
