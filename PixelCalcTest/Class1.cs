@@ -79,5 +79,23 @@ namespace PixelCalc
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void DotPitchCalcWithNegativeInputs_Input76and12and4_OutputValidDotPitch()
+        {
+            // Arrange
+            double screenWidth = 76;
+            double screenHeight = -12;
+            double diagonalInInches = 4;
+
+
+            string expected = "Please provide inputs greater than zero";
+
+            // Act
+            string actual = PixelCalc.DotPitchCalculation(screenWidth, screenHeight, diagonalInInches);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
